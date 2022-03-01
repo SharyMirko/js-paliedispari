@@ -26,4 +26,27 @@ btnOddEven.addEventListener('click', function(){
     }
 })
 
+/* 
+Chiedere all’utente di inserire una parola
+Creare una funzione per capire se la parola inserita è palindroma */
 
+let userWord = document.querySelector('#pali');
+const btnPali = document.querySelector('.check-pali');
+const stampPali = document.querySelector('.stamp-pali');
+
+function palindroma(word) {
+    let reversWord = "";
+    for (let i = word.length - 1; i >= 0; i--) {
+        reversWord += word[i];
+    }
+    return reversWord;
+}
+
+btnPali.addEventListener('click', function(){
+    let userWordValue = userWord.value;
+    if (palindroma(userWordValue) == userWordValue) {
+        stampPali.innerHTML = 'Wow è palindroma!'
+    } else {
+        stampPali.innerHTML = 'Non è palindroma!'
+    }
+})
