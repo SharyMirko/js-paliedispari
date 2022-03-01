@@ -34,7 +34,7 @@ let userWord = document.querySelector('#pali');
 const btnPali = document.querySelector('.check-pali');
 const stampPali = document.querySelector('.stamp-pali');
 
-function palindroma(word) {
+function reverse(word) {
     let reversWord = "";
     for (let i = word.length - 1; i >= 0; i--) {
         reversWord += word[i];
@@ -44,7 +44,7 @@ function palindroma(word) {
 
 btnPali.addEventListener('click', function(){
     let userWordValue = userWord.value;
-    if (palindroma(userWordValue) == userWordValue) {
+    if (reverse(userWordValue) == userWordValue) {
         stampPali.innerHTML = 'Wow è palindroma!'
     } else {
         stampPali.innerHTML = 'Non è palindroma!'
